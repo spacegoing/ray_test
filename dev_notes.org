@@ -1,0 +1,14 @@
+* AWS Setup
+
+- main:
+  https://docs.aws.amazon.com/translate/latest/dg/setup-awscli.html
+  - setup IAM:
+    - setup billing step1: https://docs.aws.amazon.com/IAM/latest/UserGuide/tutorial_billing.html
+    - setup IAM: https://docs.aws.amazon.com/cli/latest/userguide/getting-started-prereqs.html
+    - setup billing step2-4: https://docs.aws.amazon.com/IAM/latest/UserGuide/tutorial_billing.html
+  - setup CLI:
+    - https://docs.aws.amazon.com/cli/latest/userguide/install-cliv2-docker.html
+      - shorten docker command: ~alias aws='docker run --rm -it -v ~/.aws:/root/.aws -v $(pwd):/aws amazon/aws-cli'~
+    - config setup: https://docs.aws.amazon.com/cli/latest/userguide/getting-started-quickstart.html
+  - Install boto3: ``
+

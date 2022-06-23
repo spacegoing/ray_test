@@ -1,0 +1,27 @@
+---
+version: '3'
+services:
+  raynode:
+    image: rayproject/ray-ml
+    container_name: raynode
+    # build:
+    #   context: .
+    #   dockerfile: "./docker/Dockerfile.custom"
+    # volumes:
+    #   - "./:/home/ray/agent"
+    # working_dir: /home/ray/agent
+    shm_size: '20gb'
+    ports:
+      - "6379:6379"  # Redis port
+      - "10001:10001"  # Used by Ray Client
+      - "8265:8265"  # Used by Ray Dashboard
+      - "8000:8000" # Used by Ray Serve
+    tty: true
+
+  raydb:
+    image: mongo:latest
+    container_name: raydb
+    volumes:
+      - "./raydata:/data"
+    ports:
+      - "27018:27017"
